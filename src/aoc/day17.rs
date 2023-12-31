@@ -190,7 +190,9 @@ pub fn solve_b() {
 
     let ret = costs
         .iter()
-        .filter(|s| s.0.pos == (map[0].len() as i64 - 1, map.len() as i64 - 1) && s.0.steps_forward >= 4)
+        .filter(|s| {
+            s.0.pos == (map[0].len() as i64 - 1, map.len() as i64 - 1) && s.0.steps_forward >= 4
+        })
         .map(|s| s.1)
         .min()
         .unwrap();
